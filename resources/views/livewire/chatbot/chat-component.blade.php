@@ -35,3 +35,30 @@
       });
     });
   </script>
+<div id="chat-bubble" class="fixed bottom-4 right-4 z-50">
+    <button
+        class="w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center text-2xl shadow-lg">
+        <i class="fas fa-comment-dots"></i>
+    </button>
+</div>
+
+<div id="chat-widget"
+    class="fixed bottom-0 right-0 z-50 w-full max-w-md h-96 bg-white shadow-lg rounded-t-lg overflow-hidden hidden">
+    <div class="px-6 py-4 bg-blue-600 text-white font-bold">
+        Chat with our AI
+    </div>
+    <div id="chat-content" class="p-6 h-72 overflow-auto">
+        <!-- Chat goes here -->
+        <livewire:chat-bot />
+    </div>
+    <div class="px-6 py-4 bg-gray-100 border-t border-gray-200">
+        <!-- Chat input goes here -->
+    </div>
+</div>
+
+<script>
+    document.getElementById('chat-bubble').addEventListener('click', function() {
+        document.getElementById('chat-bubble').classList.add('hidden');
+        document.getElementById('chat-widget').classList.remove('hidden');
+    });
+</script>
